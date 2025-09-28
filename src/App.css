@@ -1,0 +1,441 @@
+/* Navigation */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.navigation.light {
+  --nav-bg: #ffffff;
+  --nav-text: #333333;
+  --nav-hover: #f8f9fa;
+  --border-color: #dee2e6;
+}
+
+.navigation.dark {
+  --nav-bg: #67595e;
+  --nav-text: #ffffff;
+  --nav-hover: #a49393;
+  --border-color: #eed6d3;
+}
+
+.nav-brand .brand-link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--nav-hover);
+}
+
+.nav-link.active {
+  background-color: var(--coffee-pot-light);
+  color: white;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--nav-hover);
+}
+
+.main-content {
+  flex: 1;
+  padding: 0;
+}
+
+/* CSS Variables for Theme */
+:root {
+  --rosewater: #e8b4b8;
+  --dusty-rose: #eed6d3;
+  --coffee-pot-light: #a49393;
+  --coffee-pot-dark: #67595e;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --border-color: #dee2e6;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.app.dark-mode {
+  --rosewater: #e8b4b8;
+  --dusty-rose: #eed6d3;
+  --coffee-pot-light: #a49393;
+  --coffee-pot-dark: #67595e;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --bg-primary: #2d3748;
+  --bg-secondary: #4a5568;
+  --border-color: #718096;
+  --shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* Apply dark mode to body */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Instructions Page */
+.instructions-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.instructions-content {
+  margin-top: 2rem;
+}
+
+.instruction-section {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--coffee-pot-light);
+}
+
+.instruction-section h2 {
+  color: var(--coffee-pot-dark);
+  margin-bottom: 1rem;
+}
+
+.instruction-step {
+  margin-bottom: 1.5rem;
+}
+
+.instruction-step h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.instruction-step p,
+.instruction-step li {
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.instruction-step ul {
+  margin-left: 1.5rem;
+}
+
+/* Analytics Page */
+.analytics-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border-top: 4px solid var(--rosewater);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--coffee-pot-dark);
+}
+
+.stat-number.overdue {
+  color: #dc3545;
+}
+
+.stat-number.due-today {
+  color: #28a745;
+}
+
+.analytics-section {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.analytics-section h2 {
+  color: var(--coffee-pot-dark);
+  margin-bottom: 1rem;
+}
+
+.priority-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.priority-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.column-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.column-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: 5px;
+  border-left: 4px solid var(--dusty-rose);
+}
+
+.board-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.board-stat {
+  background: var(--bg-primary);
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 4px solid var(--coffee-pot-light);
+}
+
+.board-stat h4 {
+  color: var(--coffee-pot-dark);
+  margin-bottom: 0.5rem;
+}
+
+/* Settings Page */
+.settings-page {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.settings-content {
+  margin-top: 2rem;
+}
+
+.setting-section {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.setting-section h2 {
+  color: var(--coffee-pot-dark);
+  margin-bottom: 1rem;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-label h3 {
+  margin: 0 0 0.25rem 0;
+  color: var(--text-primary);
+}
+
+.setting-label p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--coffee-pot-light);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Color Settings */
+.color-settings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.color-setting {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.color-setting label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.color-input-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.color-input-group input[type="color"] {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.color-input-group span {
+  font-family: monospace;
+  color: var(--text-secondary);
+}
+
+.color-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Update existing components to use CSS variables */
+.board-card,
+.column,
+.task-card,
+.modal {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-primary {
+  background-color: var(--coffee-pot-light);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--coffee-pot-dark);
+}
+
+.btn-secondary {
+  background-color: var(--dusty-rose);
+  color: var(--coffee-pot-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--rosewater);
+}
+
+/* Apply dark mode class to app based on context */
+.app.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Ensure all text uses the correct variables */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+p, span {
+  color: var(--text-secondary);
+}
+
+/* Update the App component to apply dark mode class */
+.app {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
