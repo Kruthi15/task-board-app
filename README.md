@@ -174,3 +174,4 @@ Monitor your productivity with comprehensive statistics
 Track task distribution across priorities and columns
 
 Identify overdue tasks and due today items
+
